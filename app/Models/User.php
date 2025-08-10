@@ -16,17 +16,18 @@ class User extends Authenticatable  implements MustVerifyEmail
 
 
     protected $fillable = [
-        'name',
-        'codesecret',
-        'qrcode',
+        'nomcomplet',
+        'telephone',
         'email',
-        'email_verified_at',
-        'password',
-        'role_id',
-        'confirmated_at',
+        'profession',
+        'pays',
+        'cv',
+        'adresse',
+        'description',
     ];
 
-  
+
+
     public static function generateUniqueCodeSecret()
     {
         // On commence avec la génération d'un code de 4 chiffres

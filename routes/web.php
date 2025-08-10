@@ -1,13 +1,20 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
-
+use App\Http\Controllers\Register\RegisterEncadreurProController;
+use App\Http\Controllers\Register\RegisterParentLocalController;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
 // Pages statiques
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact.page');
 
+
+Route::post('/register/parent/local', [RegisterParentLocalController::class, 'store'])->name('parents.local.store');
+
+Route::post('/register/parent/diaspora', [RegisterParentLocalController::class, 'store'])->name('parents.diaspora.store');
+
+Route::post('/register/parent/professionel', [RegisterEncadreurProController::class, 'store'])->name('professionnels.store');
 
 
 Route::get('/faq', function () {
@@ -28,6 +35,9 @@ Route::get('/register/parent/diaspora', function () {
 Route::get('/register/professionel', function () {
     return view('home.pages.registerencadreur');
 })->name('register.professionel');
+
+
+
 
 
 Route::get('/condtion-generale-utilisisation', function () {
