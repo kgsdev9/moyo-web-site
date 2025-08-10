@@ -1,78 +1,116 @@
 @include('layout.head')
 
-<main class="page-wrapper" x-data="waitlistForm()">
+<main class="page-wrapper">
     <div class="d-lg-flex position-relative h-100">
 
         <!-- Home button -->
         <a class="text-nav btn btn-icon bg-light border rounded-circle position-absolute top-0 end-0 p-0 mt-3 me-3 mt-sm-4 me-sm-4"
-            href="/" data-bs-toggle="tooltip" data-bs-placement="left" title="Retourner à la page d'accueil">
+            href="/" data-bs-toggle="tooltip" data-bs-placement="left" title="Retourner à la page d'accueil"
+            aria-label="Retourner à la page d'accueil">
             <i class="ai-home"></i>
         </a>
 
-        <!-- Waitlist form and confirmation -->
-        <div class="d-flex flex-column align-items-center w-lg-50 h-100 px-3 px-lg-5 pt-5">
+        <!-- Sign up form -->
+        <div class="d-flex flex-column align-items-center w-lg-50 h-100 px-3 px-lg-5 pt-5" x-data="formSteps()">
             <div class="w-100 mt-auto" style="max-width: 526px;">
+                <h1>Moyo Éducation — Inscription</h1>
+                <p class="pb-3 mb-3 mb-lg-4">
+                    Rejoignez Moyo et facilitez la scolarité des enfants en Côte d’Ivoire grâce à nos services
+                    numériques et financiers adaptés à chaque profil.
+                </p>
 
-                <!-- Step 1 : Formulaire -->
-                <div x-show="step === 1" style="display: none;">
-                    <h1>Rejoignez la file d’attente de Moyo</h1>
-                    <p class="fs-lg pb-3 mb-2 mb-sm-3 mb-lg-4 mx-auto" style="max-width: 640px;">
-                        Moyo aide les familles à mieux gérer les frais scolaires grâce à des cotisations flexibles, des fournitures accessibles et un accompagnement éducatif pour la réussite des enfants.
-                    </p>
-
-                    <div>
-                        <div class="mb-4">
-                            <input type="text" class="form-control form-control-lg mb-1" placeholder="Nom"
-                                x-model="formData.nom">
-                            <span class="text-danger" x-text="errors.nom"></span>
-
-                            <input type="text" class="form-control form-control-lg mb-1 mt-3" placeholder="Prénom"
-                                x-model="formData.prenom">
-                            <span class="text-danger" x-text="errors.prenom"></span>
-
-                            <input type="tel" class="form-control form-control-lg mb-1 mt-3" placeholder="Téléphone"
-                                x-model="formData.telephone">
-                            <span class="text-danger" x-text="errors.telephone"></span>
-
-                            <input type="text" class="form-control form-control-lg mb-1 mt-3" placeholder="Profession"
-                                x-model="formData.profession">
-                            <span class="text-danger" x-text="errors.profession"></span>
-
-                            <select class="form-control form-control-lg mb-1 mt-3" x-model="formData.commune_id">
-                                <option value="">Choisissez une commune</option>
-                                @foreach ($communes as $commune)
-                                    <option value="{{ $commune->id }}">{{ $commune->name }}</option>
-                                @endforeach
-                            </select>
-                            <span class="text-danger" x-text="errors.commune_id"></span>
-                        </div>
-
-                        <button type="button" class="btn btn-primary w-100 mb-4" @click="submit()" :disabled="formData.loading">
-                            <template x-if="formData.loading">
-                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                            </template>
-                            <template x-if="!formData.loading">
-                                <span>Rejoindre la file d’attente</span>
-                            </template>
+                <!-- Step 0: Choix du profil -->
+                <div x-show="step === 0">
+                    <h3 class="pb-3">Qui êtes-vous ?</h3>
+                    <div class="list-group mb-4">
+                        <button type="button" class="list-group-item list-group-item-action" @click="selectType('local')">
+                            👨‍👩‍👧 Parent en Côte d'Ivoire
+                            <small class="d-block text-muted">
+                                Frais d’ouverture : 2 000 FCFA (inclut carte digitale MOYO + compte digital partenaire).
+                            </small>
                         </button>
-
-                        <p x-show="message" x-text="message" class="alert" :class="messageType"></p>
+                        <button type="button" class="list-group-item list-group-item-action" @click="selectType('diaspora')">
+                            🌍 Parent ivoirien vivant à l’étranger
+                            <small class="d-block text-muted">
+                                Frais d’ouverture : 2 000 FCFA (mêmes avantages que les parents locaux, gestion à distance).
+                            </small>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action" @click="selectType('encadreur')">
+                            📚 Encadreur / Formateur / Enseignant
+                            <small class="d-block text-muted">
+                                Frais d’inscription : 5 000 FCFA (accès à l’application + avantages Moyo).
+                            </small>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Step 2 : Confirmation -->
-                <div x-show="step === 2" style="display: none;" class="text-center py-5">
-                    <h2>Félicitations !</h2>
-                    <p x-text="message" class="fs-5 mb-4"></p>
-                    <button class="btn btn-secondary" @click="resetForm()">Revenir au formulaire</button>
+                <!-- Step 1 -->
+                <div x-show="step === 1" style="display:none;">
+
+                    <!-- Bouton Retour -->
+                    <button type="button" class="btn btn-outline-secondary mb-3" @click="previousStep()">
+                        ← Retour
+                    </button>
+
+                    <template x-if="type === 'local'">
+                        <p class="alert alert-info">
+                            Vous inscrivez en tant que parent vivant en Côte d'Ivoire.
+                            Frais d’ouverture : <strong>2 000 FCFA</strong> — inclut la carte digitale MOYO et un compte digital chez notre partenaire financier.
+                        </p>
+                    </template>
+                    <template x-if="type === 'diaspora'">
+                        <p class="alert alert-warning">
+                            Vous inscrivez en tant que parent ivoirien vivant à l’étranger.
+                            Frais d’ouverture : <strong>2 000 FCFA</strong> — mêmes avantages que les parents locaux, gestion et paiement à distance.
+                        </p>
+                    </template>
+                    <template x-if="type === 'encadreur'">
+                        <p class="alert alert-success">
+                            Vous inscrivez en tant qu’encadreur ou enseignant.
+                            Frais d’inscription : <strong>5 000 FCFA</strong> — vous êtes répertorié dans l’application et profitez des avantages MOYO.
+                        </p>
+                    </template>
+
+                    <h3 class="pb-3">Étape 1 : Informations personnelles</h3>
+                    <div class="row row-cols-1 row-cols-sm-2">
+                        <div class="col mb-4">
+                            <input type="text" class="form-control form-control-lg" placeholder="Nom"
+                                x-model="formData.nom" required>
+                        </div>
+                        <div class="col mb-4">
+                            <input type="text" class="form-control form-control-lg" placeholder="Prénom"
+                                x-model="formData.prenom" required>
+                        </div>
+                        <div class="col mb-4">
+                            <input type="email" class="form-control form-control-lg" placeholder="Email"
+                                x-model="formData.email" required>
+                        </div>
+                        <div class="col mb-4">
+                            <input type="tel" class="form-control form-control-lg" placeholder="Téléphone"
+                                x-model="formData.telephone" required>
+                        </div>
+                        <div class="col mb-4">
+                            <input type="text" class="form-control form-control-lg"
+                                :placeholder="type === 'diaspora' ? 'Adresse à l’étranger' : 'Adresse en Côte d’Ivoire'"
+                                x-model="formData.adresse" required>
+                        </div>
+                        <div class="col mb-4" x-show="type !== 'encadreur'">
+                            <input type="number" class="form-control form-control-lg"
+                                placeholder="Nombre d'enfants au secondaire" x-model="formData.nb_enfant" required>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary w-100 mb-4" @click="nextStep()">Valider</button>
                 </div>
+
+                <!-- Étapes suivantes inchangées -->
 
             </div>
 
             <!-- Copyright -->
             <p class="nav w-100 fs-sm pt-5 mt-auto mb-5" style="max-width: 526px;">
                 <span class="text-body-secondary">&copy; Tous droits réservés. Fait par</span>
-                <a class="nav-link d-inline-block p-0 ms-1" href="https://moyo-ci.com" target="_blank" rel="noopener">Moyo CI</a>
+                <a class="nav-link d-inline-block p-0 ms-1" href="https://myoo.com" target="_blank"
+                    rel="noopener">Moyo Edu finance sarl</a>
             </p>
         </div>
 
@@ -86,131 +124,63 @@
 @include('layout.script')
 
 <script>
-    function waitlistForm() {
+    function formSteps() {
         return {
-            step: 1,
+            step: 0,
+            type: '',
             formData: {
-                nom: '',
-                prenom: '',
-                telephone: '',
-                profession: '',
-                commune_id: '',
-                loading: false,
+                nom: '', prenom: '', email: '', telephone: '',
+                adresse: '', nb_enfant: '',
+                piece_avant: null, piece_arriere: null, photo_assure: null,
+                piece_avantPreview: null, piece_arrierePreview: null, photo_assurePreview: null,
+                acceptConditions: false, loading: false,
             },
             message: '',
             messageType: '',
-            errors: {
-                nom: '',
-                prenom: '',
-                telephone: '',
-                profession: '',
-                commune_id: '',
+            selectType(type) {
+                this.type = type;
+                this.step = 1;
             },
-
-            validate() {
-                this.errors = {
-                    nom: '',
-                    prenom: '',
-                    telephone: '',
-                    profession: '',
-                    commune_id: '',
-                };
-
-                let valid = true;
-
-                if (!this.formData.nom.trim()) {
-                    this.errors.nom = 'Le nom est requis.';
-                    valid = false;
-                }
-
-                if (!this.formData.prenom.trim()) {
-                    this.errors.prenom = 'Le prénom est requis.';
-                    valid = false;
-                }
-
-                if (!this.formData.telephone.trim()) {
-                    this.errors.telephone = 'Le téléphone est requis.';
-                    valid = false;
-                } else {
-                    const phoneRegex = /^\d{10}$/;
-                    if (!phoneRegex.test(this.formData.telephone)) {
-                        this.errors.telephone = 'Le téléphone doit contenir 10 chiffres.';
-                        valid = false;
-                    }
-                }
-
-                if (!this.formData.profession.trim()) {
-                    this.errors.profession = 'La profession est requise.';
-                    valid = false;
-                }
-
-                if (!this.formData.commune_id) {
-                    this.errors.commune_id = 'La commune est requise.';
-                    valid = false;
-                }
-
-                return valid;
+            nextStep() { this.step++; },
+            previousStep() { this.step = 0; },
+            handleFileChange(event, type) {
+                const file = event.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onloadend = () => this.formData[type + 'Preview'] = reader.result;
+                reader.readAsDataURL(file);
             },
-
-            submit() {
-                if (!this.validate()) {
-                    return;
-                }
-
+            triggerFileInput(type) { document.getElementById(type).click(); },
+            async submitForm() {
                 this.formData.loading = true;
-                this.message = '';
-                this.messageType = '';
+                const fd = new FormData();
+                Object.keys(this.formData).forEach(k => {
+                    if (this.formData[k] !== null) fd.append(k, this.formData[k]);
+                });
+                fd.append('type', this.type);
 
-                const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-                fetch('/sondage', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken,
-                    },
-                    body: JSON.stringify(this.formData),
-                })
-                .then(response => response.json())
-                .then(result => {
-                    if (result.success && result.step === 2) {
+                try {
+                    const res = await fetch('{{ route('clients.store') }}', {
+                        method: 'POST',
+                        headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+                        body: fd
+                    });
+                    const result = await res.json();
+                    if (res.ok) {
                         this.message = result.message;
-                        this.messageType = 'alert-success';
-                        this.step = 2;
+                        this.messageType = result.existe ? 'alert-danger' : 'alert-success';
+                        if (!result.existe) window.location.href = result.signature;
                     } else {
-                        this.message = "Une erreur est survenue. Veuillez réessayer.";
+                        this.message = 'Erreur serveur, réessayez dans 2 minutes.';
                         this.messageType = 'alert-danger';
                     }
-                })
-                .catch(() => {
-                    this.message = "Nos serveurs sont occupés. Réessayez plus tard.";
+                } catch (e) {
+                    this.message = 'Erreur réseau.';
                     this.messageType = 'alert-danger';
-                })
-                .finally(() => {
+                } finally {
                     this.formData.loading = false;
-                });
-            },
-
-            resetForm() {
-                this.step = 1;
-                this.message = '';
-                this.messageType = '';
-                this.errors = {
-                    nom: '',
-                    prenom: '',
-                    telephone: '',
-                    profession: '',
-                    commune_id: '',
-                };
-                this.formData = {
-                    nom: '',
-                    prenom: '',
-                    telephone: '',
-                    profession: '',
-                    commune_id: '',
-                    loading: false,
-                };
+                }
             }
-        }
+        };
     }
 </script>

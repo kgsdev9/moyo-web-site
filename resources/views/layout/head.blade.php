@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport"
-    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
     <!-- SEO meta tags -->
     <title>Moyo Éducation | Fintech éducative en Côte d'Ivoire</title>
     <meta name="description"
@@ -9,17 +9,21 @@
     <meta name="keywords"
         content="fintech éducation, paiement frais scolaires, accompagnement scolaire, startup éducation, Côte d'Ivoire, Moyo Éducation">
     <meta name="author" content="Moyo Éducation">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon et icônes -->
-  
-    <link rel="icon" type="image/png" href="{{ asset('flaticon-moyo.png') }}" sizes="32x32">
+
+    <link rel="icon" type="image/png" href="{{ asset('favOK.png') }}" size="32x32">
     <link rel="apple-touch-icon" href="assets/img/apple-icon-180x180.png">
 
     <!-- Import Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
 
     <!-- Styles CSS Vendor (Swiper, AOS, Icons) -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}">
@@ -35,6 +39,12 @@
 
     <!-- Style de chargement -->
     <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
         .page-loading {
             position: fixed;
             top: 0;
@@ -75,10 +85,10 @@
         }
 
         .page-loading-inner>span {
-            font-family: "Inter", sans-serif;
+            font-family: "Comfortaa", sans-serif;
             font-size: 1rem;
-            font-weight: normal;
-            color: #6f788b;
+            font-weight: 700;
+            color: #393e47;
         }
 
         [data-bs-theme="dark"] .page-loading-inner>span {
@@ -101,6 +111,27 @@
             background-color: rgba(255, 255, 255, .25);
         }
 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        p,
+        span,
+        li,
+        a,
+        input,
+        textarea,
+        button {
+            font-family: 'Comfortaa', sans-serif;
+            font-weight: 700;
+        }
+
         @keyframes spinner {
             0% {
                 transform: scale(0);
@@ -112,4 +143,6 @@
             }
         }
     </style>
+
+
 </head>

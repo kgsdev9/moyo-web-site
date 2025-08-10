@@ -22,7 +22,8 @@
                     <div class="col-md-4 text-center text-md-start">
                         <h2 class="h1">Conditions Générales d'Utilisation</h2>
                         <p class="pb-3 pb-sm-4">
-                            Moyo est une solution éducative innovante qui accompagne les familles avec des services de cotisation scolaire flexible, d’achat groupé de fournitures et de coaching parental.
+                            Moyo est une solution éducative innovante qui accompagne les familles avec des services de
+                            cotisation scolaire flexible et de suivi financier sécurisé.
                         </p>
                     </div>
                     <div class="col-md-8 col-lg-7 offset-lg-1">
@@ -32,52 +33,34 @@
                             <div class="accordion-item bg-light">
                                 <h3 class="accordion-header" id="headingAdhesion">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#adhesion" aria-expanded="true" aria-controls="adhesion">
-                                        Adhésion et Tarification
+                                        data-bs-target="#adhesion" aria-expanded="true" aria-controls="adhesion">
+                                       Activation du compte
                                     </button>
                                 </h3>
                                 <div class="accordion-collapse collapse show" id="adhesion"
-                                     aria-labelledby="headingAdhesion" data-bs-parent="#cgu">
+                                    aria-labelledby="headingAdhesion" data-bs-parent="#cgu">
                                     <div class="accordion-body fs-sm">
-                                      L’adhésion à Moyo est ouverte à tous les parents souhaitant bénéficier d’un accompagnement scolaire et financier. Le coût de l’adhésion est de 2000 FCFA (soit environ 3,05 €) pour couvrir les frais administratifs.
+                                        L’activation du compte Moyo est ouverte à tous les parents souhaitant bénéficier
+                                        d’un accompagnement scolaire et financier. Le coût est de 2000 FCFA (soit environ
+                                        3,05 €), frais administratifs inclus, comprenant également la carte digitale Moyo.
+
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Services -->
-                            <div class="accordion-item bg-light">
-                                <h3 class="accordion-header" id="headingServices">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#services" aria-expanded="false" aria-controls="services">
-                                        Services Inclus
-                                    </button>
-                                </h3>
-                                <div class="accordion-collapse collapse" id="services" aria-labelledby="headingServices"
-                                     data-bs-parent="#cgu">
-                                    <div class="accordion-body fs-sm">
-                                        <ul>
-                                            <li><strong>Encadrement scolaire</strong> : Suivi des enfants dans leur parcours éducatif.</li>
-                                            <li><strong>Coaching parental</strong> : Accompagnement pour aider les parents à mieux suivre la scolarité de leurs enfants.</li>
-                                            <li><strong>Service financier</strong> : Cotisations flexibles pour préparer sereinement la rentrée scolaire.</li>
-                                            <li><strong>Suivi des cotisations</strong> : Rapports mensuels et journaliers, avec alertes automatiques après chaque versement.</li>
-                                            <li><strong>Achat groupé de fournitures</strong> : Accès à du matériel scolaire de qualité à prix réduit.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Diaspora -->
+                            <!-- Disponibilité Diaspora -->
                             <div class="accordion-item bg-light">
                                 <h3 class="accordion-header" id="headingDispo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#dispo" aria-expanded="false" aria-controls="dispo">
+                                        data-bs-target="#dispo" aria-expanded="false" aria-controls="dispo">
                                         Disponibilité pour la Diaspora
                                     </button>
                                 </h3>
                                 <div class="accordion-collapse collapse" id="dispo" aria-labelledby="headingDispo"
-                                     data-bs-parent="#cgu">
+                                    data-bs-parent="#cgu">
                                     <div class="accordion-body fs-sm">
-                                        Les parents vivant à l’étranger peuvent souscrire aux services de Moyo pour accompagner la scolarité de leurs enfants en Côte d’Ivoire.
+                                        Les parents vivant à l’étranger peuvent souscrire aux services de Moyo pour
+                                        accompagner la scolarité de leurs enfants en Côte d’Ivoire.
                                     </div>
                                 </div>
                             </div>
@@ -86,17 +69,18 @@
                             <div class="accordion-item bg-light">
                                 <h3 class="accordion-header" id="headingConditions">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#conditions" aria-expanded="false" aria-controls="conditions">
+                                        data-bs-target="#conditions" aria-expanded="false" aria-controls="conditions">
                                         Conditions d’Utilisation
                                     </button>
                                 </h3>
                                 <div class="accordion-collapse collapse" id="conditions" aria-labelledby="headingConditions"
-                                     data-bs-parent="#cgu">
+                                    data-bs-parent="#cgu">
                                     <div class="accordion-body fs-sm">
                                         En adhérant à Moyo, vous acceptez les conditions suivantes :
                                         <ul>
                                             <li>Fournir des informations exactes et à jour lors de l’inscription.</li>
-                                            <li>Utiliser les services exclusivement pour l'accompagnement éducatif de votre enfant.</li>
+                                            <li>Utiliser les services exclusivement pour l'accompagnement éducatif de votre
+                                                enfant.</li>
                                             <li>Respecter les engagements liés au service de cotisation.</li>
                                         </ul>
                                     </div>

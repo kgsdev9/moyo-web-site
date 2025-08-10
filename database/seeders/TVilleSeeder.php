@@ -17,7 +17,7 @@ class TVilleSeeder extends Seeder
         DB::table('t_villes')->insert([
             ['libelleville'=> 'Abidjan'] ,
             ['libelleville'=> 'Lome'] ,
-            ['libelleville'=> 'Burkina Faso'] ,
+            ['libelleville'=> 'Ouagadougou'] ,
             ['libelleville'=> 'Accra'] ,
         ]);
     }
