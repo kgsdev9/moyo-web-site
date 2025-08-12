@@ -13,8 +13,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon et icônes -->
-
-    <link rel="icon" type="image/png" href="{{ asset('favOK.png') }}" size="32x32">
+    <link rel="icon" href="{{asset('flaticon-moyo.png')}}">
     <link rel="apple-touch-icon" href="assets/img/apple-icon-180x180.png">
 
     <!-- Import Google Fonts -->

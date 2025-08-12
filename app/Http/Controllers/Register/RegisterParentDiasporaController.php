@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Register;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RegisterParentDiasporaController extends Controller
@@ -12,10 +13,7 @@ class RegisterParentDiasporaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -35,9 +33,18 @@ class RegisterParentDiasporaController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        User::create([
+            'nomcomplet' => $request->nomComplet ?? '',
+            'telephone'  => $request->telephone ?? '',
+            'email'      => $request->email ?? '',
+            'pays'       => $request->pays ?? '',
+            'profession'       => $request->profession ?? '',
+        ]);
 
+        return response()->json([
+            'message' => 'Inscription réussie',
+        ], 201);
+    }
     /**
      * Display the specified resource.
      *
