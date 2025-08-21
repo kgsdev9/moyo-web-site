@@ -102,11 +102,11 @@
                             <i class="ai-facebook"></i>
                         </a>
                         <a class="btn btn-icon btn-sm btn-dark btn-tiktok rounded-circle"
-                            href="https://www.tiktok.com/@moyo.ci" target="_blank" aria-label="TikTok">
+                            href="https://www.tiktok.com/@moyo_ci225?_d=secCgYIASAHKAESPgo8UsrZToGuent%2Fv6B9nqCtwwekdM9TmpU8VKvgPcDJecAouSiJoMyMFQK6dH4C%2FskjMUYPTF67k%2FNqPp6eGgA%3D&_svg=1&checksum=12552b081d2fb53b4ed480514d221a7b4895d66c9d6dbbc12b54312ef9564574&sec_uid=MS4wLjABAAAAsH670isqkxvbom90FwtL7mqCxpRwHkXBzmV3mXU3WKAKTclCOrQD_wJ97FwTKGG9&sec_user_id=MS4wLjABAAAA4He_fyJUdi9rWp-m9rgsN-VX8jvPPjKVN1RinVDTU1Jc9Ag-9OWa8VMAX38XCx4b&share_app_id=1340&share_author_id=7270147651209987104&share_link_id=2e363894-e94d-474f-bda1-f997427953bb&share_scene=1&sharer_language=fr&timestamp=1755771029&u_code=e481g8kha8h5dc&ugbiz_name=Account&user_id=7151860985023546373&utm_campaign=client_share&utm_source=whatsapp&_r=1" target="_blank" aria-label="TikTok">
                             <i class="ai-tiktok"></i>
                         </a>
                         <a class="btn btn-icon btn-sm btn-success btn-whatsapp rounded-circle"
-                            href="https://wa.me/33758946962?text=Bonjour%2C%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20les%20formules%20de%20MOYO."
+                            href="https://wa.me/2250710748295?text=Bonjour%2C%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20les%20formules%20de%20MOYO."
                             target="_blank" aria-label="WhatsApp">
                             <i class="ai-whatsapp"></i>
                         </a>
@@ -120,7 +120,7 @@
                         <div class="col mb-3 mb-md-0 text-center text-md-start">
                             <ul class="nav flex-column">
                                 <li><a class="nav-link fw-normal py-1 px-0"
-                                        href="https://wa.me/33758946962?text=Bonjour%2C%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20les%20formules%20de%20MOYO.">Devenir
+                                        href="https://wa.me/2250710748295?text=Bonjour%2C%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20les%20formules%20de%20MOYO.">Devenir
                                         promoteur</a></li>
                                 <li><a class="nav-link fw-normal py-1 px-0" href="/emploi">Offre d'emploi</a></li>
                                 <li>
@@ -140,7 +140,7 @@
                                         href="{{ route('condition.utilisation') }}">Conditions générales</a>
                                 </li>
                                 <li><a class="nav-link fw-normal py-1 px-0"
-                                        href="{{ route('terme.conditon') }}">Termes et condition</a></li>
+                                        href="{{ route('politique.confidentialite') }}">Politique de confidentialité</a></li>
                             </ul>
                         </div>
                         <!-- Colonne 3 -->

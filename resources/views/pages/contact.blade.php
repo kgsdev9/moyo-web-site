@@ -41,7 +41,7 @@
                   <ul class="list-unstyled mb-0">
                     <li class="pb-1 mb-2">
                       <span class="d-block fs-sm text-body-secondary mb-1">Bureau principal</span>
-                      <a class="nav-link fs-lg p-0" href="tel:+2250767799855">+225&nbsp;07&nbsp;59&nbsp;90&nbsp;59&nbsp;19</a>
+                      <a class="nav-link fs-lg p-0" href="tel:+2250767799855">+225&nbsp;07&nbsp;10&nbsp;74&nbsp;82&nbsp;95</a>
                     </li>
                     <li>
                       <span class="d-block fs-sm text-body-secondary mb-1">Salle de réception</span>

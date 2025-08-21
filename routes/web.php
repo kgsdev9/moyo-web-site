@@ -53,9 +53,9 @@ Route::get('/devenir-promoteur', function () {
     return view('pages.devenirpromoteur');
 })->name('home.promoteur');
 
-Route::get('/termes-condition', function () {
-    return view('home.termeconditon');
-})->name('terme.conditon');
+Route::get('/privacy', function () {
+    return view('home.privacy');
+})->name('politique.confidentialite');
 
 Route::get('/about', function () {
     return view('home.about');

@@ -40,9 +40,9 @@
                                             width="44" alt="Parents Icon">
                                     </div>
                                     <div class="ps-3">
-                                        <h3 class="h4 text-info mb-0">Parents</h3>
+                                        <h3 class="h4 text-info mb-0">Parents </h3>
                                         <div class="d-flex align-items-baseline" style="white-space: nowrap;">
-                                            <span class="h2 mb-0">5 000</span>
+                                            <span class="h2 mb-0">0</span>
                                             <span class="h5 mb-1 ms-2">FCFA / an</span>
                                         </div>
                                     </div>
@@ -52,12 +52,12 @@
 
                                     <li class="d-flex pb-1 mb-2">
                                         <i class="ai-check fs-xl mt-1 me-2"></i>
-                                        Carte digitale scolaire Moyo 2 000 FCFA
+                                        Carte digitale Moyo 2 000 FCFA
                                     </li>
 
                                     <li class="d-flex pb-1 mb-2">
                                         <i class="ai-check fs-xl mt-1 me-2"></i>
-                                        Frais annuels payable en trois mensualités : 1 500 + 1 500 + 2 000 FCFA
+                                         1% sur chaque transaction
                                     </li>
 
                                     <li class="d-flex pb-1 mb-2">
@@ -102,7 +102,7 @@
                                         <h3 class="h4 text-primary mb-0">Diaspora</h3>
 
                                         <div class="d-flex align-items-baseline" style="white-space: nowrap;">
-                                            <span class="h2 mb-0">10 000</span>
+                                            <span class="h2 mb-0">12 000</span>
                                             <span class="h5 mb-1 ms-2">FCFA / an</span>
                                         </div>
                                     </div>
@@ -114,7 +114,7 @@
                                     </li>
                                     <li class="d-flex pb-1 mb-2">
                                         <i class="ai-check fs-xl mt-1 me-2"></i>
-                                        Frais annuels payable en trois mensualités : 3 500 + 3 500 + 3 000 FCFA
+                                        Frais annuels payable en trois mensualités : 3 500 + 3 500 + 5 000 FCFA
                                     </li>
 
                                     <li class="d-flex pb-1 mb-2">
